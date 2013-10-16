@@ -26,8 +26,8 @@ When it's time to ship, run `grunt` in Terminal from your project's base directo
 2. Any images in `src/` are copied to `dist/` and minified. Directory structure is preserved here so images in `src/img/` go to `dist/img/` for example.
 3. Compass compiles the Sass again as in watch mode and also outputs a second time, compressed, to `dist/css/`.
 4. `gruntfile.js` and any Javascript in `src/js/` are linted with JSHint. Note that any subdirectories in `src/js/` are not tested to prevent testing any third-party scripts like jQuery (I usually put those in a new `src/js/libs/` directory). If any errors happen, Grunt stops here.
-5. If that worked, then any JavaScript in `src/js/` is concatenated into a single file. This will likely put the files in the wrong order and that might cause errors, so to customize it, edit `concat.dist.src` in `gruntfile.js` to list the individual files in the intended order. The concatenated file is output to `dist/js/project-name.js`.
-6. Finally, that concatenated JavaScript file is then minified with [UglifyJS](http://lisperator.net/uglifyjs/) and output to `dist/js/project-name.min.js`.
+5. If that worked, then any JavaScript in `src/js/` is concatenated into a single file. This will likely put the files in the wrong order and that might cause errors, so to customize it, edit `concat.dist.src` in `gruntfile.js` to list the individual files in the intended order. The concatenated file is output to `dist/js/new-project.js` (or whatever you assigned to "name" in `package.json` in place of `new-project`).
+6. Finally, that concatenated JavaScript file is then minified with [UglifyJS](http://lisperator.net/uglifyjs/) and output to `dist/js/new-project.min.js`.
 
 It's also fairly common to put JavaScript unit testing in the workflow as well with [QUnit](http://qunitjs.com) and/or [Jasmine](http://pivotal.github.io/jasmine/) so those can easily be added as well.
 
