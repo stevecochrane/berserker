@@ -36,7 +36,7 @@ It's also fairly common to put JavaScript unit testing in the workflow as well w
 A long list of the awesome tools that made this possible:
 
 - [Compass](http://compass-style.org) and [grunt-contrib-compass](https://npmjs.org/package/grunt-contrib-compass)
-- [Grunt](http://gruntjs.org)
+- [Grunt](http://gruntjs.com)
 - [grunt-contrib-htmlmin](https://npmjs.org/package/grunt-contrib-htmlmin)
 - [grunt-contrib-imagemin](https://npmjs.org/package/grunt-contrib-imagemin)
 - [grunt-contrib-concat](https://npmjs.org/package/grunt-contrib-concat)
@@ -47,4 +47,4 @@ A long list of the awesome tools that made this possible:
 - [Sass](http://sass-lang.com)
 - [UglifyJS](http://lisperator.net/uglifyjs/) and [grunt-contrib-uglify](https://npmjs.org/package/grunt-contrib-uglify)
 
-The name 'Berserker' is a [WarCraft](http://en.wikipedia.org/wiki/Warcraft) reference. 'Grunt' is the first available Orc combat unit in WarCraft so I named this after the second, the Berserker. Well, Berserker is the upgraded form, but it just sounds cooler than Headhunter or Axe Thrower.
+The name 'Berserker' is a [WarCraft II](http://en.wikipedia.org/wiki/Warcraft_ii)/[WarCraft III](http://en.wikipedia.org/wiki/Warcraft_iii) reference. 'Grunt' is the first available Orc combat unit in those games so I named this after the second, the Berserker. (Well, Berserker is the upgraded form, but it just sounds cooler than Headhunter or Axe Thrower.)
