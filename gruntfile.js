@@ -31,8 +31,9 @@ module.exports = function(grunt) {
 
         //  Lint test the JavaScript. (Only the new JS for this app, frameworks not included.)
         jshint: {
-            //  Define the files to lint.
-            //  Since I didn't specify /**/ this will ignore anything in src/js/libs/
+            //  Define the files to lint. Since I didn't specify /**/ this will ignore any 
+            //  subdirectories. I usually put third-party scripts in src/js/libs/ so this prevents 
+            //  something like jQuery from being linted here.
             files: [
                 'gruntfile.js',
                 'src/js/*.js'
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 //  Add files to concatenate, in their intended order, here.
-                src: ['src/js/*.js'],
+                src: ['src/js/**/*.js'],
                 //  The location of the resulting JS file.
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
