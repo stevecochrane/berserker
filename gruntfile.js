@@ -11,7 +11,6 @@ module.exports = function(grunt) {
         compass: {
             dev: {
                 options: {
-                    require: ['normalize'],
                     sassPath: 'src/sass',
                     cssPath: 'src/css',
                     imagesPath: 'src/img',
@@ -21,7 +20,6 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    require: ['normalize'],
                     sassPath: 'src/sass',
                     cssPath: 'dist/css',
                     imagesPath: 'dist/img',
