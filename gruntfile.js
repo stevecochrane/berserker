@@ -6,6 +6,38 @@ module.exports = function(grunt) {
         //  Read in settings from package.json.
         pkg: grunt.file.readJSON('package.json'),
 
+        //  This will find any HTML files in the src folder, minify them, and place the 
+        //  minified versions into the dist folder, preserving directory structure.
+        //  (ex. /src/index.html will output to /dist/index.html)
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/',
+                    src: ['**/*.{html,php}'],
+                    dest: 'dist/'
+                }]
+            }
+        },
+
+        //  This will find any images in the src folder, minify them, and place the 
+        //  minified versions into the dist folder, preserving directory structure.
+        //  (ex. images in /src/img will go into /dist/img)
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/'
+                }]
+            }
+        },
+
         //  Compile SASS w/ Compass. When in dev mode, output in expanded style so the CSS is 
         //  easy to read, and when in dist mode, output compressed (minified) for production.
         compass: {
@@ -70,38 +102,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //  This will find any HTML files in the src folder, minify them, and place the 
-        //  minified versions into the dist folder, preserving directory structure.
-        //  (ex. /src/index.html will output to /dist/index.html)
-        htmlmin: {
-            dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'src/',
-                    src: ['**/*.{html,php}'],
-                    dest: 'dist/'
-                }]
-            }
-        },
-
-        //  This will find any images in the src folder, minify them, and place the 
-        //  minified versions into the dist folder, preserving directory structure.
-        //  (ex. images in /src/img will go into /dist/img)
-        imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'dist/'
-                }]
-            }
-        },
-
         //  Watch certain files and when they change, execute some of the above plugins.
         watch: {
             compass: {
@@ -109,6 +109,7 @@ module.exports = function(grunt) {
                 tasks: ['compass:dev']
             }
         }
+
     });
 
     //  Load plugin(s).
