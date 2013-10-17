@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         //  Watch certain files and when they change, execute some of the above plugins.
         watch: {
             compass: {
-                files: ['<%= compass.dist.options.sassPath %>/*.scss'],
+                files: ['<%= compass.dev.options.sassPath %>/*.scss'],
                 tasks: ['compass:dev']
             }
         }
