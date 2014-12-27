@@ -1,0 +1,40 @@
+@border-color-base: rgba(0,0,0,0.1);
+@font-size-base: 16;
+@font-stack-base: 'Ideal Sans SSm A', 'Ideal Sans SSm B';
+@font-stack-header: 'Ideal Sans A', 'Ideal Sans B';
+@golden-ratio: 1.61803398875;
+@img-dir: "../img/v6";
+@link-color-base: #ff5b59;  /* http://0to255.com/ff6c6a, -1 */
+@link-color-hover: #ff8e8c; /* http://0to255.com/ff6c6a, +2 */
+@page-width: 888;
+@rem: unit(@font-size-base, rem);
+@shadow-color-base: rgba(0,0,0,0.25);
+@text-color-base: #484848;
+@text-color-light: #9f9f9f;
+
+//  Media query breakpoints.
+//  Use these like so:
+//  @media @mq-medium {
+//      (styles for this media query go here)
+//  }
+@mq-medium: ~"screen and (max-width: 800px)";
+@mq-small: ~"screen and (max-width: 600px)";
+@mq-high-dpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)";
+
+//  A clearfix for floats, if :after isn't already taken.
+.pie-clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//  This isn't represented in Autoprefixer yet so here's a custom mixin.
+//  Here's the W3C proposed standard: http://dev.w3.org/csswg/css-images-3/#the-image-rendering
+.pixel-art-scaling() {
+	-ms-interpolation-mode: nearest-neighbor;       // IE 7-8, not supported in IE9+ :(
+	image-rendering: -moz-crisp-edges;              // Firefox
+	image-rendering: -webkit-optimize-contrast;     // Chrome, Safari
+    image-rendering: crisp-edges;                   // W3C proposed standard for pixel art
+}
