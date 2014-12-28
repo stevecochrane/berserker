@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 
-var autoprefixer = require("autoprefixer-core"),
+var autoprefixer = require("gulp-autoprefixer"),
     combineMediaQueries = require("gulp-combine-media-queries"),
     concat = require("gulp-concat"),
     imagemin = require("gulp-imagemin"),
@@ -9,7 +9,6 @@ var autoprefixer = require("autoprefixer-core"),
     minifyCss = require("gulp-minify-css"),
     minifyHtml = require("gulp-minify-html"),
     pixrem = require("gulp-pixrem"),
-    postCss = require("gulp-postcss"),
     uglify = require("gulp-uglify");
 
 gulp.task("copy-assets", function() {
@@ -26,10 +25,10 @@ gulp.task("imagemin", function() {
 gulp.task("css", function() {
     gulp.src("./src/less/main.less")
         .pipe(less())
+        .pipe(autoprefixer())
         .pipe(pixrem())
-        .pipe(postCss([ autoprefixer() ]))
         .pipe(combineMediaQueries())
-        .pipe(minifyCss())
+        .pipe(minifyCss({ noAdvanced: true }))
         .pipe(gulp.dest("./dist/css"));
 });
 
