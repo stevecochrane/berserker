@@ -1,16 +1,9 @@
-@border-color-base: rgba(0,0,0,0.1);
 @font-size-base: 16;
-@font-stack-base: 'Ideal Sans SSm A', 'Ideal Sans SSm B';
-@font-stack-header: 'Ideal Sans A', 'Ideal Sans B';
-@golden-ratio: 1.61803398875;
-@img-dir: "../img/v6";
-@link-color-base: #ff5b59;  /* http://0to255.com/ff6c6a, -1 */
-@link-color-hover: #ff8e8c; /* http://0to255.com/ff6c6a, +2 */
-@page-width: 888;
+//  It's a little ugly compared to Sass functions, but the following can be used for converting 
+//  from px to rem. e.g. font-size: 12/@rem;
 @rem: unit(@font-size-base, rem);
-@shadow-color-base: rgba(0,0,0,0.25);
-@text-color-base: #484848;
-@text-color-light: #9f9f9f;
+
+@golden-ratio: 1.61803398875;
 
 //  Media query breakpoints.
 //  Use these like so:
