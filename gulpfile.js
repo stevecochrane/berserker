@@ -34,14 +34,12 @@ gulp.task("css", function() {
         .pipe(gulp.dest("./dist/css"));
 });
 
-gulp.task("test", function() {
+gulp.task("js", function() {
     gulp.src("./src/js/main.js")
         .pipe(jshint())
         .pipe(jshint.reporter("default"))
         .pipe(jshint.reporter("fail"));
-});
 
-gulp.task("js", function() {
     return browserify("./src/js/main.js")
         .bundle()
         .pipe(vinylSourceStream("main.js"))
@@ -56,4 +54,4 @@ gulp.task("html", function() {
         .pipe(gulp.dest("./dist"));
 });
 
-gulp.task("default", ["test", "js", "css", "html"]);
+gulp.task("default", ["js", "css", "html"]);
