@@ -11,7 +11,8 @@ var autoprefixer = require("gulp-autoprefixer"),
     pixrem = require("gulp-pixrem"),
     uglify = require("gulp-uglify"),
     vinylBuffer = require("vinyl-buffer"),
-    vinylSourceStream = require("vinyl-source-stream");
+    vinylSourceStream = require("vinyl-source-stream"),
+    watch = require("gulp-watch");
 
 gulp.task("copy-assets", function() {
     gulp.src("./node_modules/normalize.css/normalize.css")
@@ -52,6 +53,12 @@ gulp.task("html", function() {
     gulp.src("./src/**/*.{html,php}")
         .pipe(minifyHtml())
         .pipe(gulp.dest("./dist"));
+});
+
+gulp.task("watch", function() {
+    watch("./src/less/main.less", function() {
+        gulp.start("css");
+    });
 });
 
 gulp.task("default", ["js", "css", "html"]);
