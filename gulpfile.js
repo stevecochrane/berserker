@@ -61,4 +61,4 @@ gulp.task("watch", function() {
     });
 });
 
-gulp.task("default", ["js", "css", "html"]);
+gulp.task("default", ["copy-assets", "imagemin", "js", "css", "html"]);
