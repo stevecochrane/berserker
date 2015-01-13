@@ -6,6 +6,7 @@ var autoprefixer = require("gulp-autoprefixer"),
     imagemin = require("gulp-imagemin"),
     jshint = require("gulp-jshint"),
     less = require("gulp-less"),
+    liveReload = require("gulp-livereload"),
     minifyCss = require("gulp-minify-css"),
     minifyHtml = require("gulp-minify-html"),
     pixrem = require("gulp-pixrem"),
@@ -22,7 +23,8 @@ gulp.task("copy-assets", function() {
 gulp.task("imagemin", function() {
     gulp.src("./src/img/*")
         .pipe(imagemin())
-        .pipe(gulp.dest("./dist/img"));
+        .pipe(gulp.dest("./dist/img"))
+        .pipe(liveReload());
 });
 
 gulp.task("css", function() {
@@ -32,7 +34,8 @@ gulp.task("css", function() {
         .pipe(pixrem())
         .pipe(combineMediaQueries())
         .pipe(minifyCss({ noAdvanced: true }))
-        .pipe(gulp.dest("./dist/css"));
+        .pipe(gulp.dest("./dist/css"))
+        .pipe(liveReload());
 });
 
 gulp.task("js", function() {
@@ -46,16 +49,19 @@ gulp.task("js", function() {
         .pipe(vinylSourceStream("main.js"))
         .pipe(vinylBuffer())
         .pipe(uglify())
-        .pipe(gulp.dest("./dist/js"));
+        .pipe(gulp.dest("./dist/js"))
+        .pipe(liveReload());
 });
 
 gulp.task("html", function() {
     gulp.src("./src/**/*.{html,php}")
         .pipe(minifyHtml())
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./dist"))
+        .pipe(liveReload());
 });
 
 gulp.task("watch", function() {
+    liveReload.listen();
     watch("./src/less/main.less", function() {
         gulp.start("css");
     });
