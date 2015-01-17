@@ -17,7 +17,7 @@ I'll likely make a script for this mess at some point. This does the following:
 5. `npm install` installs all the necessary Node modules listed in `package.json`. If you don't have [Node](http://nodejs.org) yet you'll need to install it to run Gulp.
 6. Finally, `gulp copy-assets` copies the latest `normalize.css` from `node_modules` to `src/css/`.
 
-Once that's all set, you can add your site/app name and description to `package.json` and then build sites as normal in the `src/` folder. I've primed `src/less/` with [Normalize.css](http://necolas.github.io/normalize.css/) and a `base.less` file for variables and helper functions. Less compilation is built into Gulp here: run `gulp watch` in Terminal to watch files in the `src/gulp/` directory and they'll output to `dist/css/` every time the src file is saved.
+Once that's all set, you can add your site/app name and description to `package.json` and then build sites as normal in the `src/` folder. I've primed `src/less/` with [Normalize.css](http://necolas.github.io/normalize.css/) and a `base.less` file for variables and helper functions. Less compilation is built into Gulp here: run `gulp watch` in Terminal to watch files in the `src/gulp/` directory and they'll output to `dist/css/` every time the src file is saved. This also has [LiveReload](http://livereload.com/) support so if you have the [browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) you can see the changes you make in your browser immediately!
 
 ### What This Does
 
@@ -43,6 +43,7 @@ A long list of the awesome and free tools that made this possible:
 
 - [Autoprefixer](https://github.com/postcss/autoprefixer) and [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
 - [Browserify](http://browserify.org)
+- [Gulp](http://gulpjs.com/)
 - [gulp-combine-media-queries](https://www.npmjs.com/package/gulp-combine-media-queries)
 - [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
 - [gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css)
@@ -50,7 +51,9 @@ A long list of the awesome and free tools that made this possible:
 - [gulp-pixrem](https://www.npmjs.com/package/gulp-pixrem)
 - [gulp-watch](https://www.npmjs.com/package/gulp-watch)
 - [JSHint](http://jshint.com) and [gulp-jshint](https://www.npmjs.com/package/gulp-jshint)
+- [jQuery](http://jquery.com/)
 - [Less](http://lesscss.org) and [gulp-less](https://www.npmjs.com/package/gulp-less)
+- [LiveReload](http://livereload.com/) and [gulp-livereload](https://www.npmjs.com/package/gulp-livereload)
 - [Node](http://nodejs.org)
 - [Normalize.css](http://necolas.github.io/normalize.css/)
 - [UglifyJS](http://lisperator.net/uglifyjs/) and [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
