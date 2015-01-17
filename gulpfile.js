@@ -20,7 +20,7 @@ gulp.task("copy-assets", function() {
         .pipe(gulp.dest("./src/css"));
 });
 
-gulp.task("imagemin", function() {
+gulp.task("images", function() {
     gulp.src("./src/img/**/*")
         .pipe(imagemin())
         .pipe(gulp.dest("./dist/img"))
@@ -67,4 +67,4 @@ gulp.task("watch", function() {
     });
 });
 
-gulp.task("default", ["imagemin", "js", "css", "html"]);
+gulp.task("default", ["images", "js", "css", "html"]);
