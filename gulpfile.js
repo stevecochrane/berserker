@@ -62,8 +62,17 @@ gulp.task("html", function() {
 
 gulp.task("watch", function() {
     liveReload.listen();
+
     watch("./src/less/main.less", function() {
         gulp.start("css");
+    });
+
+    watch("./src/js/main.js", function() {
+        gulp.start("js");
+    });
+
+    watch("./src/**/*.{html,php}", function() {
+        gulp.start("html");
     });
 });
 
