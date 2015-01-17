@@ -33,7 +33,7 @@ gulp.task("css", function() {
         .pipe(autoprefixer())
         .pipe(pixrem())
         .pipe(combineMediaQueries())
-        .pipe(minifyCss({ noAdvanced: true }))
+        .pipe(minifyCss({ noAdvanced: true })) // noAdvanced is true so pixrem fallback styles don't get removed
         .pipe(gulp.dest("./dist/css"))
         .pipe(liveReload());
 });
