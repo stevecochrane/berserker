@@ -1,5 +1,7 @@
 # Berserker
 
+##### Update (November 27, 2015): This has been abandoned as I don't start new web projects often enough for maintenance to be worth my time anymore. For a more up-to-date look at my current setup, see my [stevecochrane.com](https://github.com/stevecochrane/stevecochrane.com) repo.
+
 This is what I use to start a new front-end web dev project. It creates a basic directory structure and uses the power of [Gulp](http://gulpjs.com) (with a small army of Gulp plugins), [Less](http://lesscss.org), and [Browserify](http://browserify.org) to start with a solid foundation for any project, all with two Terminal commands. This likely isn't perfect for anyone that isn't me, but you can always fork it and make changes to suit your needs.
 
 ### Setting Up
